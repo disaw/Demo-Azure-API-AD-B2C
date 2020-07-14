@@ -6,8 +6,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
-using Domain.Interfaces;
 using Domain.Enums;
+using WebAPI.Services;
 
 namespace WebAPI.Controllers
 {
@@ -16,17 +16,17 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository _productRepository;
+        private readonly IProductService _productService;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Product>>> Get()
         {
-            var products = await _productRepository.Read();
+            var products = await _productService.Read();
 
             return Ok(products);
         }
@@ -34,7 +34,7 @@ namespace WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Product>> Get(string id)
         {
-            var product = await _productRepository.Read(id);
+            var product = await _productService.Read(id);
 
             if (product == null)
             {
@@ -47,12 +47,12 @@ namespace WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(Product product)
         {
-            if (_productRepository.ProductExists(product.Id))
+            if (_productService.ProductExists(product.Id))
             {
                 return Conflict($"Product with an Id: {product.Id} already exists.");
             }
 
-            await _productRepository.Create(product);
+            await _productService.Create(product);
 
             return Ok($"Product: {product.Id} was created successfully.");
         }
@@ -65,12 +65,12 @@ namespace WebAPI.Controllers
                 return BadRequest($"Product: {id} was not found.");
             }
 
-            if (!_productRepository.ProductExists(product.Id))
+            if (!_productService.ProductExists(product.Id))
             {
                 return Conflict($"Invalid product Id: {id}.");
             }
 
-            await _productRepository.Update(product);
+            await _productService.Update(product);
 
             return Ok($"Product: {id} was updated successfully.");
         }        
@@ -78,12 +78,12 @@ namespace WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
-            if (!_productRepository.ProductExists(id))
+            if (!_productService.ProductExists(id))
             {
                 return NotFound($"Product: {id} was not found.");
             }
 
-            await _productRepository.Delete(id);
+            await _productService.Delete(id);
 
             return Ok($"Product: {id} was deleted successfully.");
         }
@@ -98,7 +98,7 @@ namespace WebAPI.Controllers
                 return NotFound($"Invalid Filter.");
             }
 
-            var product = await _productRepository.FilterProducts(filterType, value);
+            var product = await _productService.FilterProducts(filterType, value);
 
             if (product == null)
             {

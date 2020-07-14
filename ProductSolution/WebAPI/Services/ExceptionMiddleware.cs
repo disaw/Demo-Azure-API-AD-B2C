@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Net;
 
-namespace WebAPI
+namespace WebAPI.Services
 {
     public class ExceptionMiddleware
     {

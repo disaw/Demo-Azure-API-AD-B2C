@@ -16,6 +16,7 @@ using Infrastructure.Persistency;
 using Microsoft.EntityFrameworkCore;
 using Domain.Interfaces;
 using Infrastructure.Repositories;
+using WebAPI.Services;
 
 namespace WebAPI
 {
@@ -42,6 +43,7 @@ namespace WebAPI
             services.AddCors();
 
             services.AddLogging();
+            services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IProductRepository, ProductRepository>();
         }
 
