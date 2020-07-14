@@ -41,6 +41,7 @@ namespace WebAPI
 
             services.AddCors();
 
+            services.AddLogging();
             services.AddScoped<IProductRepository, ProductRepository>();
         }
 
@@ -52,6 +53,8 @@ namespace WebAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -62,7 +65,7 @@ namespace WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
+            });            
         }
     }
 }
