@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
 using Domain.Interfaces;
+using Domain.Enums;
 
 namespace WebAPI.Controllers
 {
@@ -41,7 +42,7 @@ namespace WebAPI.Controllers
             }
 
             return Ok(product);
-        }
+        }        
 
         [HttpPost]
         public async Task<IActionResult> Post(Product product)
@@ -85,6 +86,37 @@ namespace WebAPI.Controllers
             await _productRepository.Delete(id);
 
             return Ok($"Product: {id} was deleted successfully.");
+        }
+
+        [HttpGet("{filter}/{value}")]
+        public async Task<ActionResult<Product>> Get(string filter, string value)
+        {
+            var filterType = GetFilter(filter);
+
+            if (filterType == Filter.Invalid)
+            {
+                return NotFound($"Invalid Filter.");
+            }
+
+            var product = await _productRepository.FilterProducts(filterType, value);
+
+            if (product == null)
+            {
+                return NotFound($"No products found.");
+            }
+
+            return Ok(product);
+        }
+
+        private Filter GetFilter(string filter)
+        {
+            switch (filter.Trim().ToLower())
+            {
+                case "description": return Filter.Description;
+                case "model": return Filter.Model;
+                case "brand": return Filter.Brand;
+                default: return Filter.Invalid;
+            }
         }
     }
 }

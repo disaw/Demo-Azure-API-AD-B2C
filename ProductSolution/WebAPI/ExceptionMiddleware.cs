@@ -29,7 +29,7 @@ namespace WebAPI
 
                 var Response = httpContext.Response;
                 Response.StatusCode = (int)HttpStatusCode.InternalServerError;
-                await Response.WriteAsync("Internal server error. Please refer the logs.");
+                await Response.WriteAsync("Error Occurred. Please refer the logs.");
             }
         }
     }
