@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{F1A6F7DD-FDCE-43AD-99E4-29A75E30BA89}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{F0EF9019-0643-46D2-BC2F-35B312D61DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{E5EE2ED7-B64F-4CD5-A1F1-9E31EB048E1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1A6F7DD-FDCE-43AD-99E4-29A75E30BA89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1A6F7DD-FDCE-43AD-99E4-29A75E30BA89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1A6F7DD-FDCE-43AD-99E4-29A75E30BA89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1A6F7DD-FDCE-43AD-99E4-29A75E30BA89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0EF9019-0643-46D2-BC2F-35B312D61DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0EF9019-0643-46D2-BC2F-35B312D61DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0EF9019-0643-46D2-BC2F-35B312D61DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0EF9019-0643-46D2-BC2F-35B312D61DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5EE2ED7-B64F-4CD5-A1F1-9E31EB048E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5EE2ED7-B64F-4CD5-A1F1-9E31EB048E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5EE2ED7-B64F-4CD5-A1F1-9E31EB048E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5EE2ED7-B64F-4CD5-A1F1-9E31EB048E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {58F675AF-AE63-498E-9053-D790C21BFF0D}
+	EndGlobalSection
+EndGlobal
