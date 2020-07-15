@@ -22,8 +22,8 @@
 Authentication is done using the latest Azure Active Directory B2C Authentication service.
 
 List of products are pre populated for demonstration purposes.
-When you run the application you can list the products without login in.
-In order to perform Create, Update or Delete products users have to register and login.
+When you run the application you can list the products without logging in.
+In order to perform Create, Update or Delete oprations, users have to register and login.
 Registration can be done using a valid email address where the confirmation code will be sent.
 Benefits of Azure AD B2C Authentication service is that, it is fully cloud based and can be extended to use with existing providers like Facebook.
 
