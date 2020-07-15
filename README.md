@@ -6,7 +6,7 @@
 
 1. Set 'Functions' and 'WebApp' as two starting projects.
 
-![Starting Projects](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/MultipleStartupProjects.JPG?raw=true)
+![Starting Projects](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/MultipleStartup.png?raw=true)
 
 
 2. Restrore nuget packages 
