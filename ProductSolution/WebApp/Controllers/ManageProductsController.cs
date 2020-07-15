@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
 using WebApp.Services;
 using Microsoft.AspNetCore.Authorization;
+using System;
+using System.Collections.Generic;
 
 namespace WebApp.Controllers
 {    
@@ -15,9 +17,20 @@ namespace WebApp.Controllers
             _productService = productService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string filter, string searchString)
         {
-            return View(await _productService.Read());
+            IEnumerable<Product> products;
+
+            if (!String.IsNullOrEmpty(filter) && !String.IsNullOrEmpty(searchString))
+            {
+                products = await _productService.FilterProducts(filter, searchString);
+            }
+            else
+            {
+                products = await _productService.Read();
+            }
+
+            return View(products);
         }
 
         [Authorize]

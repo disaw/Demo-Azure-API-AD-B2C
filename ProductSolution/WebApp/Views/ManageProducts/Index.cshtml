@@ -4,29 +4,65 @@
     ViewData["Title"] = "Home";
 }
 
-    <h1>List of Products</h1>
+<h1>List of Products</h1>
 
-    <p style="align-items:end">
-        <a asp-action="Create" class="btn btn-success" style="float: right;">Create New</a>
-    </p>
-    <br/><br />
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Model)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Brand)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-    @foreach (var item in Model) {
+<table class="table">
+    <tr>
+        <td style="text-align:right;">
+            @using (Html.BeginForm())
+            {
+                <p>
+                    @{
+                        List<SelectListItem> listItems = new List<SelectListItem>();
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Description",
+                            Value = "description",
+                            Selected = true
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Model",
+                            Value = "model"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Brand",
+                            Value = "brand"
+                        });
+                    }
+                    @Html.DropDownList("Filter", listItems)
+                    @Html.TextBox("SearchString")
+                    <input type="submit" value="Filter" />
+                </p>
+            }
+        </td>
+        <td>
+            <p style="align-items:end">
+                <a asp-action="Create" class="btn btn-success" style="float: right;">Create New</a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Model)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Brand)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Description)
@@ -43,6 +79,6 @@
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
-    }
+        }
     </tbody>
 </table>

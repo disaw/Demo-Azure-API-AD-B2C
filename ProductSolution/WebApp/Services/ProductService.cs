@@ -54,7 +54,7 @@ namespace WebApp.Services
 
         public async Task<IEnumerable<Product>> FilterProducts(string filter, string value)
         {
-            return await _api.Get<IEnumerable<Product>>(_url, value);
+            return await _api.Get<IEnumerable<Product>>(_url, $"{filter}/{value}");
         }
     }
 }
