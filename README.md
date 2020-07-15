@@ -37,7 +37,12 @@ Tests are written in xUnit and Moq.
 ![Test](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Tests.png?raw=true)
 
 
-## Sample API Endpoints:
+## Azure Hosted Live Demo:
+
+https://demo-products-webapp-disaw.azurewebsites.net/
+
+
+## Sample API Endpoints (local):
 
 GET http://localhost:7777/api/products/
 
