@@ -10,7 +10,8 @@ namespace WebApp.Services
     public class ProductService : IProductService
     {
         private readonly IApiService _api;
-        private const string url = "https://localhost:44399/products/";
+        //private const string url = "https://localhost:44399/products/";
+        private const string url = "http://localhost:7777/api/products/";
 
         public ProductService(IApiService api)
         {

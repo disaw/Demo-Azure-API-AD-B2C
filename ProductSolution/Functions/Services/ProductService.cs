@@ -4,7 +4,7 @@ using Domain.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace WebAPI.Services
+namespace Functions.Services
 {
     public class ProductService : IProductService
     {
