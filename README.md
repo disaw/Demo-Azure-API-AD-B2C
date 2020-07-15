@@ -14,7 +14,7 @@
 
 3. Run the solution
 
-![Web UI](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/WebUIHome.JPG?raw=true)
+![Web UI](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/WebUI.JPG?raw=true)
 
 
 ## Authentication:
