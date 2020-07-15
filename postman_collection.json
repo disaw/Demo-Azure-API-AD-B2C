@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "a802ab49-6876-42b7-94d1-6894d51216d4",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Dev",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44399/products/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44399/products/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"description\": \"Dell G5 15\",\r\n    \"model\": \"Laptop\",\r\n    \"brand\": \"Dell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44399/products/",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"description\": \"Dell G5\",\r\n    \"model\": \"Laptop\",\r\n    \"brand\": \"Dell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44399/products/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44399/products/1",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{filter}/{value}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44399/products/model/lap",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44399",
+							"path": [
+								"products",
+								"model",
+								"lap"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Azure",
+			"item": [
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://demo-products-disaw.azurewebsites.net//products/",
+							"protocol": "https",
+							"host": [
+								"demo-products-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"protocol": "https",
+							"host": [
+								"demo-products-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"1\",\r\n    \"description\": \"Dell G5 15\",\r\n    \"model\": \"Laptop\",\r\n    \"brand\": \"Dell\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://demo-products-disaw.azurewebsites.net/products/",
+							"protocol": "https",
+							"host": [
+								"demo-products-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"protocol": "https",
+							"host": [
+								"demo-products-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"protocol": "https",
+							"host": [
+								"demo-products-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
