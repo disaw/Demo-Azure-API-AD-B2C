@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Functions.Services;
 using Domain.Models;
+using System.Collections.Generic;
 
 namespace Functions.Products
 {
@@ -19,7 +20,7 @@ namespace Functions.Products
         }
 
         [FunctionName("Filter")]
-        public async Task<ActionResult<Product>> Run(
+        public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", 
             Route = "products/{filter}/{value}")] 
             HttpRequest req, string filter, string value, ILogger log)
@@ -33,14 +34,14 @@ namespace Functions.Products
                 return new NotFoundObjectResult($"Invalid Filter.");
             }
 
-            var product = await _productService.FilterProducts(filterType, value);
+            var products = await _productService.FilterProducts(filterType, value);
 
-            if (product == null)
+            if (products == null)
             {
                 return new NotFoundObjectResult($"No products found.");
             }
 
-            return new OkObjectResult(product);
+            return new OkObjectResult(products);
         }
 
         private Domain.Enums.Filter GetFilter(string filter)

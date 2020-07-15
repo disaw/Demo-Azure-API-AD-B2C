@@ -52,7 +52,7 @@ namespace WebApp.Services
             return await _api.Get<bool>(_url, id);
         }
 
-        public async Task<IEnumerable<Product>> FilterProducts(Filter filter, string value)
+        public async Task<IEnumerable<Product>> FilterProducts(string filter, string value)
         {
             return await _api.Get<IEnumerable<Product>>(_url, value);
         }

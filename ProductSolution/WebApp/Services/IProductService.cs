@@ -19,6 +19,6 @@ namespace WebApp.Services
 
         Task<bool> ProductExists(string id);
 
-        Task<IEnumerable<Product>> FilterProducts(Filter filter, string value);
+        Task<IEnumerable<Product>> FilterProducts(string filter, string value);
     }
 }
