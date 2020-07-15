@@ -2,9 +2,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Domain.Models;
 using WebApp.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.Controllers
 {
+    [Authorize]
     public class ManageProductsController : Controller
     {
         private readonly IProductService _productService;
@@ -36,6 +38,7 @@ namespace WebApp.Controllers
             return View(product);
         }
 
+        
         public IActionResult Create()
         {
             return View();
