@@ -14,13 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44399/products/",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
 								""
 							]
@@ -34,13 +35,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44399/products/2",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/2",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
 								"2"
 							]
@@ -63,13 +65,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44399/products/",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
 								""
 							]
@@ -92,13 +95,14 @@
 							}
 						},
 						"url": {
-							"raw": "https://localhost:44399/products/2",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/2",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
 								"2"
 							]
@@ -112,13 +116,14 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44399/products/1",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/1",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
 								"1"
 							]
@@ -132,16 +137,17 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://localhost:44399/products/model/lap",
-							"protocol": "https",
+							"raw": "http://localhost:7777/api/products/description/Dell",
+							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "44399",
+							"port": "7777",
 							"path": [
+								"api",
 								"products",
-								"model",
-								"lap"
+								"description",
+								"Dell"
 							]
 						}
 					},
@@ -159,17 +165,23 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://demo-products-disaw.azurewebsites.net//products/",
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
 							"protocol": "https",
 							"host": [
-								"demo-products-disaw",
+								"demo-products-functions-disaw",
 								"azurewebsites",
 								"net"
 							],
 							"path": [
-								"",
+								"api",
 								"products",
 								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
 							]
 						}
 					},
@@ -181,16 +193,24 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/1/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
 							"protocol": "https",
 							"host": [
-								"demo-products-disaw",
+								"demo-products-functions-disaw",
 								"azurewebsites",
 								"net"
 							],
 							"path": [
+								"api",
 								"products",
-								"1"
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
 							]
 						}
 					},
@@ -211,16 +231,23 @@
 							}
 						},
 						"url": {
-							"raw": "https://demo-products-disaw.azurewebsites.net/products/",
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
 							"protocol": "https",
 							"host": [
-								"demo-products-disaw",
+								"demo-products-functions-disaw",
 								"azurewebsites",
 								"net"
 							],
 							"path": [
+								"api",
 								"products",
 								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
 							]
 						}
 					},
@@ -231,17 +258,34 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"2\",\r\n    \"description\": \"Macbook Pro 15\",\r\n    \"model\": \"Laptop\",\r\n    \"brand\": \"Apple\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
 						"url": {
-							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/2/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
 							"protocol": "https",
 							"host": [
-								"demo-products-disaw",
+								"demo-products-functions-disaw",
 								"azurewebsites",
 								"net"
 							],
 							"path": [
+								"api",
 								"products",
-								"1"
+								"2",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
 							]
 						}
 					},
@@ -253,16 +297,54 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "https://demo-products-disaw.azurewebsites.net/products/1",
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/1/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
 							"protocol": "https",
 							"host": [
-								"demo-products-disaw",
+								"demo-products-functions-disaw",
 								"azurewebsites",
 								"net"
 							],
 							"path": [
+								"api",
 								"products",
-								"1"
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products/{filter}/{value}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://demo-products-functions-disaw.azurewebsites.net/api/products/description/Pro/?code=xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw==",
+							"protocol": "https",
+							"host": [
+								"demo-products-functions-disaw",
+								"azurewebsites",
+								"net"
+							],
+							"path": [
+								"api",
+								"products",
+								"description",
+								"Pro",
+								""
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "xSZIT/uXY6l703yNezC9yaoaIF9rVgE9Lj4qiaP3H3vCF8Lbki1piw=="
+								}
 							]
 						}
 					},
