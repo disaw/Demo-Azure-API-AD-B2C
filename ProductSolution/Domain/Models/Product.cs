@@ -6,8 +6,10 @@ namespace Domain.Models
     public class Product
     {
         [Key]
+        [Required]
         public string Id { get; set; }
 
+        [Required]
         [Column(TypeName = "nvarchar(100)")]
         public string Description { get; set; }
 
