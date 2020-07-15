@@ -3,14 +3,21 @@
 ![Design](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Design.JPG?raw=true)
 
 ## How to Run:
+
 1. Set 'Functions' and 'WebApp' as two starting projects.
-![Starting Projects](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Multiple%20Startup%20Projects.JPG?raw=true)
+
+![Starting Projects](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Multiple%20Startup%20Projects.JPG | width=200)
+
 
 2. Restrore nuget packages 
-![Solution Structure](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Solution%20Structure.JPG?raw=true)
+
+![Solution Structure](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Solution%20Structure.JPG | width=150)
+
 
 3. Run the solution
-![Web UI](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/WebUI.JPG?raw=true)
+
+![Web UI](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/WebUI.JPG | width=500)
+
 
 
 API Endpoints:
