@@ -5,8 +5,7 @@ using WebApp.Services;
 using Microsoft.AspNetCore.Authorization;
 
 namespace WebApp.Controllers
-{
-    [Authorize]
+{    
     public class ManageProductsController : Controller
     {
         private readonly IProductService _productService;
@@ -21,6 +20,7 @@ namespace WebApp.Controllers
             return View(await _productService.Read());
         }
 
+        [Authorize]
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -38,12 +38,13 @@ namespace WebApp.Controllers
             return View(product);
         }
 
-        
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Description,Model,Brand")] Product product)
@@ -57,6 +58,7 @@ namespace WebApp.Controllers
             return View(product);
         }
 
+        [Authorize]
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -74,6 +76,7 @@ namespace WebApp.Controllers
             return View(product);
         }
 
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,Description,Model,Brand")] Product product)
@@ -92,6 +95,7 @@ namespace WebApp.Controllers
             return View(product);
         }
 
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -109,6 +113,7 @@ namespace WebApp.Controllers
             return View(product);
         }
 
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
