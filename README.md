@@ -9,9 +9,9 @@
 ![Starting Projects](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/MultipleStartup.png?raw=true)
 
 
-2. Restrore nuget packages 
+2. Restore nuget packages 
 
-![Solution Structure](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/SolutionStructure.JPG?raw=true)
+![Solution Structure](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Projects.png?raw=true)
 
 
 3. Run the solution
@@ -19,8 +19,27 @@
 ![Web UI](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/WebUIHome.JPG?raw=true)
 
 
+## Authentication:
 
-API Endpoints:
+Authentication is done using the latest Azure Active Directory B2C Authentication service.
+
+List of products are pre populated for demonstration purposes.
+When you run the application you can list the products without login in.
+In order to perform Create, Update or Delete products users have to register and login.
+Registration can be done using a valid email address where the confirmation code will be sent.
+Benefits of Azure AD B2C Authentication service is it is cloud based and can be used with existing providers like Facebook.
+
+
+## How to Run Test:
+
+Right Click 'ProductTests' project and click 'Run Tests'
+
+Tests are written in xUnit and Moq.
+
+![Test](https://github.com/disaw/Demo-Azure-API-AD-B2C/blob/master/Documents/Tests.png?raw=true)
+
+
+## Sample API Endpoints:
 
 GET http://localhost:7777/api/products/
 
